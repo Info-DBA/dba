@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DBA Design Build Acoustics</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #111;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    img.logo {
+      max-width: 300px;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 9em;
+      margin: 0 0 30px;
+    }
+
+    .changing-text {
+      font-size: 3em;
+      height: 60px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 12px 24px;
+      color: #111;
+      background: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="DBA logol.jpg" alt="DBA Logo" class="logo">
+  <h1>DESIGN. BUILD. ACOUSTICS.</h1>
+  <div class="changing-text" id="changingText">CREATE CALM</div>
+  <p>We design and build architectural acoustic solutions.</p>
+  <a href="mailto:info@designbuildacoustics.com" class="contact-button">Contact Us</a>
+
+  <footer>
+    Email: info@designbuildacoustics.com | Phone: 07956839366
+  </footer>
+
+  <script>
+    const texts = ['CREATE CALM', 'CREATE SERENITY', 'CREATE FOCUS'];
+    let count = 0;
+    const el = document.getElementById('changingText');
+
+    function showText() {
+      el.style.opacity = 0;
+      setTimeout(() => {
+        el.textContent = texts[count];
+        el.style.opacity = 1;
+        count = (count + 1) % texts.length;
+      }, 500);
+    }
+
+    showText();
+    setInterval(showText, 4000);
+  </script>
+
+</body>
+</html>
