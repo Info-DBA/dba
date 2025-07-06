@@ -10,11 +10,15 @@
       background: #111;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+    }
+    .wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* min-height: 100vh;  Removed this line */
-      text-align: center;
+      min-height: 100vh;
+      justify-content: center;
+      padding: 20px;
     }
 
     img.logo {
@@ -41,17 +45,20 @@
       justify-content: center;
       gap: 40px;
       margin: 40px 0;
-      padding: 0 20px;
+      padding: 40px 20px;
+      background: #222;
+      border-radius: 10px;
     }
 
     .service-block {
-      background-color: #222;
+      background-color: #333;
       border-radius: 10px;
       padding: 30px;
       max-width: 300px;
       min-width: 260px;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid red; /* debug border */
     }
 
     .service-block:hover {
@@ -95,28 +102,29 @@
   </style>
 </head>
 <body>
+  <div class="wrapper">
+    <img src="DBA-WHITE.png" alt="DBA Logo" class="logo" />
+    <h1>DESIGN. BUILD. ACOUSTICS.</h1>
+    <div class="changing-text" id="changingText">CREATE CALM</div>
 
-  <img src="DBA-WHITE.png" alt="DBA Logo" class="logo" />
-  <h1>DESIGN. BUILD. ACOUSTICS.</h1>
-  <div class="changing-text" id="changingText">CREATE CALM</div>
+    <div class="services-container">
+      <div class="service-block">
+        <h2>ACOUSTIC DESIGN SERVICE.</h2>
+        <p>Providing detailed CAD drawings bringing your designs to life with clarity and care.</p>
+      </div>
+      <div class="service-block">
+        <h2>ACOUSTIC SUPPLY AND INSTALL SERVICE.</h2>
+        <p>We provide a client-centred installation service. Our installers are trained experts in the installation of acoustic products and treatments.</p>
+      </div>
+    </div>
 
-  <div class="services-container">
-    <div class="service-block">
-      <h2>ACOUSTIC DESIGN SERVICE.</h2>
-      <p>Providing detailed CAD drawings bringing your designs to life with clarity and care.</p>
-    </div>
-    <div class="service-block">
-      <h2>ACOUSTIC SUPPLY AND INSTALL SERVICE.</h2>
-      <p>We provide a client-centred installation service. Our installers are trained experts in the installation of acoustic products and treatments.</p>
-    </div>
+    <p class="main-description">We design and build architectural acoustic solutions.</p>
+    <a href="mailto:info@designbuildacoustics.com" class="contact-button">Contact Us</a>
+
+    <footer>
+      Email: info@designbuildacoustics.com | Phone: 07956839366
+    </footer>
   </div>
-
-  <p class="main-description">We design and build architectural acoustic solutions.</p>
-  <a href="mailto:info@designbuildacoustics.com" class="contact-button">Contact Us</a>
-
-  <footer>
-    Email: info@designbuildacoustics.com | Phone: 07956839366
-  </footer>
 
   <script>
     const texts = ['CREATE CALM', 'CREATE SERENITY', 'CREATE FOCUS'];
@@ -135,6 +143,5 @@
     showText();
     setInterval(showText, 4000);
   </script>
-
 </body>
 </html>
